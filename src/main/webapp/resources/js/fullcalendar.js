@@ -23,7 +23,7 @@ var defaults = {
 	header: {
 		left: 'prev,next today',
 		center: 'title',
-		right: 'month,basicWeek,basicDay'
+		right: 'month,agendaWeek,agendaDay'
 	},
 	weekends: true,
 	weekNumbers: false,
