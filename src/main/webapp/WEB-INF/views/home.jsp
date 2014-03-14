@@ -26,10 +26,11 @@
 			
 			var calendar = $('#calendar').fullCalendar({
 				header: {
-					left: 'prev,next today',
+					left: 'prevYear,prev,next,nextYear today',
 					center: 'title',
 					right: 'month,agendaWeek,agendaDay'
 				},
+				eventColor: '#36D7B7',
 				selectable: true,
 				selectHelper: true,
 				editable: true,
@@ -50,7 +51,12 @@
 				},
 				editable: true,
 				
+				eventClick: function(event){
+					   $('#myCalendar').fullCalendar('removeEvents',event._id);
+					}
 			});
+			
+			
 			
 		});
 	    </script>
