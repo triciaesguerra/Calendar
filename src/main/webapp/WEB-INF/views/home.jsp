@@ -12,42 +12,63 @@
 
 		<!-- Include JS Plugins -->
 	    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 	    <script src="<c:url value="/resources/js/fullcalendar.js" />"></script>
 
 	    <!--Load Calendar-->
 	    <script>
-	    	$(document).ready(function() {
-	    		
-	    		$('#external-events div.external-event').each(function() {
-	    			
-	    			// create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
-	    			// it doesn't need to have a start or end
-	    			var eventObject = {
-	    				title: $.trim($(this).text()) // use the element's text as the event title
-	    			};
-	    			
-	    			// store the Event Object in the DOM element so we can get to it later
-	    			$(this).data('eventObject', eventObject);
-	    			
-	    			// make the event draggable using jQuery UI
-	    			$(this).draggable({
-	    				zIndex: 999,
-	    				revert: true,      // will cause the event to go back to its
-	    				revertDuration: 0  //  original position after the drag
-	    			});
-	    			
-	    		});
+	    $(document).ready(function() {
 	    	
-
-    		// page is now ready, initialize the calendar...
-
-		    	$('#calendar').fullCalendar({
-		        // put your options and callbacks here
-		    	});
-
+			var date = new Date();
+			var d = date.getDate();
+			var m = date.getMonth();
+			var y = date.getFullYear();
+			
+			var calendar = $('#calendar').fullCalendar({
+				header: {
+					left: 'prev,next today',
+					center: 'title',
+					right: 'month,agendaWeek,agendaDay'
+				},
+				selectable: true,
+				selectHelper: true,
+				editable: true,
+				select: function(start, end, allDay) {
+					var title = prompt('Event Title:');
+					if (title) {
+						calendar.fullCalendar('renderEvent',
+							{
+								title: title,
+								start: start,
+								end: end,
+								allDay: allDay
+							},
+							true // make the event "stick"
+						);
+					}
+					calendar.fullCalendar('unselect');
+				},
+				editable: true,
+				
 			});
+			
+		});
 	    </script>
+	<style>
 
+		body {
+			margin-top: 40px;
+			text-align: center;
+			font-size: 14px;
+			font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+			}
+	
+		#calendar {
+			width: 900px;
+			margin: 0 auto;
+			}
+
+	</style>
 	</head>
 
 	<body>

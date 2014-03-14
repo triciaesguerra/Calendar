@@ -21,7 +21,7 @@ var defaults = {
 	defaultView: 'month',
 	aspectRatio: 1.35,
 	header: {
-		left: 'prev,next today',
+		left: 'prevYear,prev,next,nextYear today',
 		center: 'title',
 		right: 'month,agendaWeek,agendaDay'
 	},
@@ -31,9 +31,9 @@ var defaults = {
 	weekNumberTitle: 'W',
 	
 	// editing
-	//editable: false,
-	//disableDragging: false,
-	//disableResizing: false,
+	editable: false,
+	disableDragging: false,
+	disableResizing: false,
 	
 	allDayDefault: true,
 	ignoreTimezone: true,
@@ -83,7 +83,7 @@ var defaults = {
 		next: 'circle-triangle-e'
 	},
 	
-	//selectable: false,
+	selectable: true,
 	unselectAuto: true,
 	
 	dropAccept: '*',
@@ -91,6 +91,7 @@ var defaults = {
 	handleWindowResize: true
 	
 };
+
 
 // right-to-left defaults
 var rtlDefaults = {
