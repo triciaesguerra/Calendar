@@ -36,12 +36,12 @@ public class HomeController {
 		return "calendar";
 	}
 	
-	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	@RequestMapping(value = "/pomodoro", method = RequestMethod.GET)
 	public String test(Model model) {
 	    String greetings = "Greetings, Spring MVC!";
 	    model.addAttribute("message", greetings);
 	 
-	    return "test";
+	    return "pomodoro";
 	}
 	
 	

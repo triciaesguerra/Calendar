@@ -5,15 +5,15 @@
  	<head>
 
 		<!--Include Stylesheets -->
-		<link href="<c:url value="/resources/css/fullcalendar.css" />" rel="stylesheet"/>
+		<link href="<c:url value="/resources/calendar/css/fullcalendar.css" />" rel="stylesheet"/>
 		
-		<!-- <link rel="stylesheet" href="<c:url value="/resources/css/fullcalendar.print.css" />" />
-		 <link rel="stylesheet" href="<c:url value="/resources/css/fullcalendar.css" />" />-->
+		<!-- <link rel="stylesheet" href="<c:url value="/resources/calendar/css/fullcalendar.print.css" />" />
+		 <link rel="stylesheet" href="<c:url value="/resources/calendar/css/fullcalendar.css" />" />-->
 
 		<!-- Include JS Plugins -->
 	    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 	    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-	    <script src="<c:url value="/resources/js/fullcalendar.js" />"></script>
+	    <script src="<c:url value="/resources/calendar/js/fullcalendar.js" />"></script>
 
 	    <!--Load Calendar-->
 	    <script>
